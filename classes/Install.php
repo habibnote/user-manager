@@ -9,8 +9,8 @@ class Install {
     use Hook;
 
     public function __construct() {
-        $this->action( 'init', [$this, 'init'] );
-        $this->activation( [$this, 'bootstrapping'] );
+        $this->action( 'init', [ $this, 'init' ] );
+        $this->activation( [ $this, 'bootstrapping' ] );
     }
 
     public function bootstrapping() {

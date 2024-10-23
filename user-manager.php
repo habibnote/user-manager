@@ -1,7 +1,7 @@
 <?php
 /*
  * Plugin Name:       User Manager
- * Plugin URI:          
+ * Plugin URI:        https://github.com/habibnote/user-manager.git
  * Description:       
  * Version:           0.0.1
  * Requires PHP:      7.2

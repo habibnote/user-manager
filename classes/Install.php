@@ -9,13 +9,14 @@ class Install {
     use Hook;
 
     public function __construct() {
+        $this->action( 'init', [$this, 'init'] );
         $this->activation( [$this, 'bootstrapping'] );
     }
 
     public function bootstrapping() {
 
         if( ! $this->is_database_up_to_date() ) {
-            $this->create_table();
+            $this->create_page();
             $this->update_db_version(); 
         }
     }
@@ -23,24 +24,24 @@ class Install {
     /**
      * Create database table.
      */
-    public function create_table(): void {
-        require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
+    public function create_page() {
+        // Create pages for login and registration
+        $login_page = array(
+            'post_title'   => 'Login',
+            'post_content' => '[um_login]',
+            'post_status'  => 'publish',
+            'post_type'    => 'page',
+        );
+        $registration_page = array(
+            'post_title'   => 'Registration',
+            'post_content' => '[um_registration]',
+            'post_status'  => 'publish',
+            'post_type'    => 'page',
+        );
 
-        // global $wpdb;
-
-        // $db         = $wpdb;
-        // $prefix     = $db->prefix . 'UM_';
-        // $table_name = $prefix . 'sample';
-        // $charset_collate = $db->get_charset_collate();
-
-        // $sql = "CREATE TABLE {$table_name} (
-        //     id BIGINT(20) UNSIGNED NOT NULL AUTO_INCREMENT,
-        //     title VARCHAR(255) NOT NULL,
-        //     author VARCHAR(255) NOT NULL,
-        //     PRIMARY KEY (id)
-        // ) {$charset_collate};";
-
-        // dbDelta($sql);
+        // Insert pages into database
+        wp_insert_post( $login_page );
+        wp_insert_post( $registration_page );
     }
 
     /**

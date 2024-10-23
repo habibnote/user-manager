@@ -1,6 +1,6 @@
 # WP Library System
 
-This is a WordPress plugin for Books library management system.
+This is a WordPress plugin for User management system.
 
 ## Developer/Dependencies
 
@@ -8,14 +8,6 @@ Use the package manager [Composer](https://getcomposer.org) and [NPM](https://ww
 
 ```bash
 composer update
-```
-
-```bash
-npm i
-```
-
-```bash
-npm run build
 ```
 
 ## Usage

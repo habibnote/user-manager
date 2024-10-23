@@ -6,7 +6,7 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
-    'Habib\\WPLibrarySystem\\Trait\\' => array($baseDir . '/trait'),
-    'Habib\\WPLibrarySystem\\Classes\\' => array($baseDir . '/classes'),
-    'Habib\\WPLibrarySystem\\' => array($baseDir . '/'),
+    'Habib\\UserManager\\Trait\\' => array($baseDir . '/trait'),
+    'Habib\\UserManager\\Classes\\' => array($baseDir . '/classes'),
+    'Habib\\UserManager\\' => array($baseDir . '/'),
 );

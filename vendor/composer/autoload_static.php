@@ -9,22 +9,22 @@ class ComposerStaticInit650775015a4382f1a56fe0e4661f1423
     public static $prefixLengthsPsr4 = array (
         'H' => 
         array (
-            'Habib\\WPLibrarySystem\\Trait\\' => 28,
-            'Habib\\WPLibrarySystem\\Classes\\' => 30,
-            'Habib\\WPLibrarySystem\\' => 22,
+            'Habib\\UserManager\\Trait\\' => 24,
+            'Habib\\UserManager\\Classes\\' => 26,
+            'Habib\\UserManager\\' => 18,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
-        'Habib\\WPLibrarySystem\\Trait\\' => 
+        'Habib\\UserManager\\Trait\\' => 
         array (
             0 => __DIR__ . '/../..' . '/trait',
         ),
-        'Habib\\WPLibrarySystem\\Classes\\' => 
+        'Habib\\UserManager\\Classes\\' => 
         array (
             0 => __DIR__ . '/../..' . '/classes',
         ),
-        'Habib\\WPLibrarySystem\\' => 
+        'Habib\\UserManager\\' => 
         array (
             0 => __DIR__ . '/../..' . '/',
         ),

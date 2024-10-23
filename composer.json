@@ -1,0 +1,14 @@
+{
+    "authors": [
+        {
+            "name": "Md. Habib"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Habib\\UserManager\\": "",
+            "Habib\\UserManager\\Classes\\": "classes/",
+            "Habib\\UserManager\\Trait\\": "trait/"
+        }
+    }
+}

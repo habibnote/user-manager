@@ -13,6 +13,7 @@ class Front {
 
         $this->action( 'wp_enqueue_scripts', [ $this, 'enqueue_assets' ] );
         $this->shortcode( 'um_login', [ $shortcode, 'login' ] );
+        $this->shortcode( 'um_registration', [ $shortcode, 'registration' ] );
     }
 
     public function enqueue_assets() {

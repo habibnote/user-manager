@@ -15,5 +15,4 @@ class Admin {
     public function admin_enqueue_assets( $screen ) {
 
     }
-
 }

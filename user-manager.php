@@ -53,7 +53,6 @@ class PluginStructure {
         define( 'UM_DIR', plugin_dir_path( UM_FILE ) );
         define( 'UM_URL', plugin_dir_url( UM_FILE ) );
         define( 'UM_ASSET', plugins_url( 'assets', UM_FILE ) );
-        define( 'UM_SPA', plugins_url( 'spa', UM_FILE ) );
         if( DEVS ) {
             define( 'ASSETS_VERSION', time() );
         }

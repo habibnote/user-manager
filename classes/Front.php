@@ -19,6 +19,6 @@ class Front {
     }
 
     public function enqueue_assets() {
-        
+        wp_enqueue_style( 'front', UM_ASSET . '/front/css/front.css', '', UM_VERSION, 'all' );
     }
 }

@@ -15,6 +15,7 @@ class Front {
         $this->shortcode( 'um_login', [ $shortcode, 'login' ] );
         $this->shortcode( 'um_registration', [ $shortcode, 'registration' ] );
         $this->shortcode( 'um_registration', [ $shortcode, 'registration' ] );
+        $this->shortcode( 'um_dashboard', [ $shortcode, 'dashboard' ] );
     }
 
     public function enqueue_assets() {

@@ -1,24 +1,24 @@
 <?php $url = get_permalink(); ?>
 <div class="um-user-dashboard-wrapper">
-    <h1>User Dashboard</h1>
+    <h1><?php esc_html_e( 'User Dashboard', 'u-manager' ) ?></h1>
     <nav class="um-navigation"> 
         <ul>
             <?php 
                 $dashboard_options = [
                     [
-                        'title'     => 'New Order',
+                        'title'     => __( 'New Order', 'u-manager' ),
                         'status'    => 'new-order'
                     ],
                     [
-                        'title'     => 'My Service',
+                        'title'     => __( 'My Service', 'u-manager' ),
                         'status'    => 'my-service'
                     ],
                     [
-                        'title'     => 'Renew',
+                        'title'     => __( 'Renew', 'u-manager' ),
                         'status'    => 'renew'
                     ],
                     [
-                        'title'     => 'Earn',
+                        'title'     => __( 'Earn', 'u-manager' ),
                         'status'    => 'earn'
                     ],
                 ];

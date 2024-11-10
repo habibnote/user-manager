@@ -26,22 +26,42 @@ class Install {
      */
     public function create_page() {
         // Create pages for login and registration
-        $login_page = array(
-            'post_title'   => 'Login',
-            'post_content' => '[um_login]',
-            'post_status'  => 'publish',
-            'post_type'    => 'page',
-        );
-        $registration_page = array(
-            'post_title'   => 'Registration',
-            'post_content' => '[um_registration]',
-            'post_status'  => 'publish',
-            'post_type'    => 'page',
-        );
+        $creatable_pages = [
+            [
+                'post_title'   => 'Login',
+                'post_content' => '[um_login]',
+                'post_status'  => 'publish',
+                'post_type'    => 'page',
+            ],
+            [
+                'post_title'   => 'Registration',
+                'post_content' => '[um_registration]',
+                'post_status'  => 'publish',
+                'post_type'    => 'page',
+            ],
+            [
+                'post_title'   => 'Dashboard',
+                'post_content' => '[um_dashboard]',
+                'post_status'  => 'publish',
+                'post_type'    => 'page',
+            ]
 
-        // Insert pages into database
-        wp_insert_post( $login_page );
-        wp_insert_post( $registration_page );
+        ];
+        // $login_page = array(
+            
+        // );
+        // $registration_page = array(
+            
+        // );
+        // $dashboard_page = array(
+        //     'post_title'   => 'Dashboard',
+        //     'post_content' => '[um_dashboard]',
+        //     'post_status'  => 'publish',
+        //     'post_type'    => 'page',
+        // );
+        foreach( $creatable_pages as $page ) {
+            wp_insert_post( $page );
+        }
     }
 
     /**

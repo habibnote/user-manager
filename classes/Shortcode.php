@@ -9,6 +9,11 @@ class Shortcode {
     public function login() {
         ob_start();
         wp_login_form();
+        ?>
+            <p>
+                <a href="<?php echo wp_lostpassword_url(); ?>"><?php esc_html_e( 'Forgot Password?', 'u-manager' ); ?></a>
+            </p>
+        <?php
         return ob_get_clean();
     }
 
@@ -16,6 +21,7 @@ class Shortcode {
      * User Registration Form
      */
     public function registration() {
+        
         ob_start();
         ?>
             <form action="">

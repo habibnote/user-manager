@@ -16,7 +16,7 @@ class Helper {
 
 			ob_start();
 			include $path;
-			echo ob_get_clean();
+			return ob_get_clean();
 		}
 		else {
 			error_log( 'Template file not found: ' . $path );

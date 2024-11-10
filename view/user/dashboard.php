@@ -1,6 +1,6 @@
 <?php 
     $url = get_permalink(); 
-    
+
     $dashboard_options = [
         [
             'title'     => __( 'New Order', 'u-manager' ),
@@ -19,6 +19,7 @@
             'status'    => 'earn'
         ],
     ];
+
 ?>
 <div class="um-user-dashboard-wrapper">
     <h1><?php esc_html_e( 'User Dashboard', 'u-manager' ) ?></h1>
@@ -26,8 +27,20 @@
         <ul>
             <?php 
                 foreach( $dashboard_options as $options ) {
-                    printf( '<li><a href="%s">%s</a></li>', add_query_arg( 'status', $options['status'], $url ), $options['title'] );
-                }   
+                    printf( '<li><a href="%s">%s</a></li>', add_query_arg( 'um-status', $options['status'], $url ), $options['title'] );
+
+                } 
+                
+                if( isset( $_GET['um-status'] ) ) {
+
+                    foreach( $dashboard_options as $options ) {
+                        if( ! empty( $_GET['um-status'] ) && $_GET['um-status'] == $options['status'] ) {
+                            ob_start();
+                            include UM_DIR.'view/dashboard/'.$options['status'].'.php' ;
+                            echo ob_get_clean();
+                        } 
+                    }
+                }
             ?>
         </ul>
     </nav>

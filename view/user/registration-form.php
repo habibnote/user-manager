@@ -17,7 +17,7 @@
                 wp_update_user( array( 'ID' => $user_id, 'display_name' => $name ) );
                 update_user_meta( $user_id, 'country', $country );
     
-                printf( "<script>window.location.href = '%s?user_id=%s';</script>", site_url('/dashboard'), $user_id );
+                printf( "<script>window.location.href = '%s?singup=%s';</script>", site_url('/login'), 'success' );
     
             } else {
                 echo 'Error: ' . $user_id->get_error_message();

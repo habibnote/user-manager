@@ -24,7 +24,7 @@ class Shortcode {
 
         ob_start();
         ?>
-            <form action="">
+            <form method="POST" action="<?php echo site_url( '/dashboard' ); ?>">
                 <p>
                     <label for="um-signup-name"><?php esc_html_e( 'Name', 'u-manager' ); ?></label>
                     <input type="text" id="um-signup-name" placeholder="Enter Your Name">

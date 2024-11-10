@@ -2,9 +2,10 @@
 
 namespace Habib\UserManager\Classes;
 
-use ParagonIE\Sodium\Core\Curve25519\H;
+use Habib\UserManager\Classes\Helper;
 
 class Shortcode {
+
     /**
      * User Login Form
      */
@@ -23,10 +24,7 @@ class Shortcode {
      * User Registration Form
      */
     public function registration() {
-
-        ob_start();
-        
-        return ob_get_clean();
+        Helper::get_template( 'user/registration-form.php' );
     }
 
     /**

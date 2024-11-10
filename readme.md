@@ -1,4 +1,4 @@
-# WP Library System
+# User manager System
 
 This is a WordPress plugin for User management system.
 

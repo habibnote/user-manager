@@ -32,7 +32,6 @@
                 } 
                 
                 if( isset( $_GET['um-status'] ) ) {
-
                     foreach( $dashboard_options as $options ) {
                         if( ! empty( $_GET['um-status'] ) && $_GET['um-status'] == $options['status'] ) {
                             ob_start();

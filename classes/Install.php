@@ -47,18 +47,7 @@ class Install {
             ]
 
         ];
-        // $login_page = array(
-            
-        // );
-        // $registration_page = array(
-            
-        // );
-        // $dashboard_page = array(
-        //     'post_title'   => 'Dashboard',
-        //     'post_content' => '[um_dashboard]',
-        //     'post_status'  => 'publish',
-        //     'post_type'    => 'page',
-        // );
+        
         foreach( $creatable_pages as $page ) {
             wp_insert_post( $page );
         }

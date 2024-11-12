@@ -13,6 +13,10 @@ class Install {
         $this->activation( [ $this, 'bootstrapping' ] );
     }
 
+    public function init() {
+        um_register_post_type( 'um_product', 'Product', 'Products', 'dashicons-products', 5 );
+    }
+
     public function bootstrapping() {
 
         if( ! $this->is_database_up_to_date() ) {

@@ -271,3 +271,44 @@ function countries() {
         'ZW' => 'Zimbabwe',
     );
 }
+
+/**
+ * Create Post Type
+ */
+function um_register_post_type ( $name, $label, $labels, $icon, $position ) {
+    $label_data = [
+        'name'               => _x( $labels, 'post type general name' ),
+        'singular_name'      => _x( $label, 'post type singular name' ),
+        'menu_name'          => _x( $labels, 'admin menu' ),
+        'name_admin_bar'     => _x( $label, 'add new on admin bar' ),
+        'add_new'            => _x( 'Add New', 'book' ),
+        'add_new_item'       => __( 'Add New ' . $labels ),
+        'new_item'           => __( 'New ' . $label ),
+        'edit_item'          => __( 'Edit ' . $label ),
+        'view_item'          => __( 'View ' . $label ),
+        'all_items'          => __( 'All ' . $label ),
+        'search_items'       => __( 'Search ' . $labels ),
+        'parent_item_colon'  => __( 'Parent ' . $labels . ':' ),
+        'not_found'          => __( 'No ' . $labels . ' found.' ),
+        'not_found_in_trash' => __( 'No ' . $labels . ' found in Trash.' ),
+    ];
+
+    $args = array(
+        'labels'             => $label_data,
+        'public'             => true,
+        'publicly_queryable' => true,
+        'show_ui'            => true,
+        'show_in_menu'       => true,
+        'query_var'          => true,
+        'rewrite'            => array( 'slug' => $label ),
+        'capability_type'    => 'post',
+        'has_archive'        => true,
+        'hierarchical'       => false,
+        'menu_icon'          => $icon,
+        'show_in_rest'       => true,
+        'menu_position'      => $position,
+        'supports'           => array( 'title', 'editor' ),
+    );
+
+    register_post_type( $name, $args );
+}

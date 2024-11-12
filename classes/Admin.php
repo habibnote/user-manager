@@ -21,7 +21,7 @@ class Admin {
     public function add_meta_box() {
         add_meta_box(
             'um_product_price',              
-            __( 'Product Meta Info', 'u-manager' ),               
+            __( 'Product Info', 'u-manager' ),               
             [$this, 'product_meta_info_callback'],     
             'um_product',                
             'normal',                        

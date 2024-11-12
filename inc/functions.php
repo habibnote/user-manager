@@ -341,3 +341,23 @@ function um_register_taxonomy( $taxonomy, $singular_label, $plural_label, $post_
 
     register_taxonomy( $taxonomy, $post_types, $args );
 }
+
+ /**
+ * Check metabox security.
+ */
+function is_secured( $post_id, $nonce, $action ) {
+    if ( ! wp_verify_nonce( $nonce, $action ) ) {
+        return false;
+    }
+    if ( ! current_user_can( 'edit_post', $post_id ) ) {
+        return false;
+    }
+    if ( wp_is_post_autosave( $post_id ) ) {
+        return false;
+    }
+    if ( wp_is_post_revision( $post_id ) ) {
+        return false;
+    }
+
+    return true;
+}

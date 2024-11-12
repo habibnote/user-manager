@@ -1,4 +1,9 @@
 <?php 
+
+    if( ! is_user_logged_in() ) {
+        return;
+    }
+
     $url = get_permalink(); 
 
     $dashboard_options = [

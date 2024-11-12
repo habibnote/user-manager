@@ -14,7 +14,12 @@ class Install {
     }
 
     public function init() {
+
+        //Register all post types
         um_register_post_type( 'um_product', 'Product', 'Products', 'dashicons-products', 5 );
+
+        //Register all texonomys
+        um_register_taxonomy( 'type', 'Category', 'Categories', 'um_product' );
     }
 
     public function bootstrapping() {

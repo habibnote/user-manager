@@ -281,7 +281,7 @@ function um_register_post_type ( $name, $label, $labels, $icon, $position ) {
         'singular_name'      => _x( $label, 'post type singular name' ),
         'menu_name'          => _x( $labels, 'admin menu' ),
         'name_admin_bar'     => _x( $label, 'add new on admin bar' ),
-        'add_new'            => _x( 'Add New', 'book' ),
+        'add_new'            => _x( 'Add '. $labels, 'Add New' ),
         'add_new_item'       => __( 'Add New ' . $labels ),
         'new_item'           => __( 'New ' . $label ),
         'edit_item'          => __( 'Edit ' . $label ),
@@ -305,10 +305,39 @@ function um_register_post_type ( $name, $label, $labels, $icon, $position ) {
         'has_archive'        => true,
         'hierarchical'       => false,
         'menu_icon'          => $icon,
-        'show_in_rest'       => true,
         'menu_position'      => $position,
         'supports'           => array( 'title', 'editor' ),
     );
 
     register_post_type( $name, $args );
+}
+
+/**
+ * Register a Custom Taxonomy
+ */
+function um_register_taxonomy( $taxonomy, $singular_label, $plural_label, $post_types = array( 'post' ), $hierarchical = true ) {
+    $labels = array(
+        'name'              => _x( $plural_label, 'taxonomy general name' ),
+        'singular_name'     => _x( $singular_label, 'taxonomy singular name' ),
+        'search_items'      => __( 'Search ' . $plural_label ),
+        'all_items'         => __( 'All ' . $plural_label ),
+        'parent_item'       => __( 'Parent ' . $singular_label ),
+        'parent_item_colon' => __( 'Parent ' . $singular_label . ':' ),
+        'edit_item'         => __( 'Edit ' . $singular_label ),
+        'update_item'       => __( 'Update ' . $singular_label ),
+        'add_new_item'      => __( 'Add ' . $singular_label ),
+        'new_item_name'     => __( 'New ' . $singular_label . ' Name' ),
+        'menu_name'         => __( $plural_label ),
+    );
+
+    $args = array(
+        'hierarchical'      => $hierarchical,
+        'labels'            => $labels,
+        'show_ui'           => true,
+        'show_admin_column' => true,
+        'query_var'         => true,
+        'rewrite'           => array( 'slug' => strtolower( $singular_label ) ),
+    );
+
+    register_taxonomy( $taxonomy, $post_types, $args );
 }
